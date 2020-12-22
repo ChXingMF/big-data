@@ -1,5 +1,5 @@
 /*
-	åŠŸèƒ½ï¼š
+	¹¦ÄÜ£ºË«É«Çò£¬Áù¸ö1-33Ö®¼ä²»ÖØ¸´µÄºìÉ«Çò£¬Ò»¸ö1-16Ö®¼äµÄÀ¶É«Çò
 */
 import java.util.Random;
 
@@ -8,24 +8,29 @@ public class RedandBlueThird {
 	public static void main (String[] args) {
 		
 		int[] red = new int[6];
-		int blue = new Random(16);
+		int blue = new Random().nextInt(16);
 		blue += 1;
+		Random random = new Random();
 		
-		for(int=0; i<6; ++i) {
+		for(int i=0; i<6; ++i) {
 			
-			red[] = new Random(36);
+			red[i] = random.nextInt(33);
 			red[i] += 1;
-			for(int j=0; j<i; ++i) {
-				if (red[i] == red[j]) {
-					--i;
-					break;
+			
+			if (i > 1){
+				for(int j=0; j<i; ++j) {
+					if (red[i] == red[j]) {
+						--i;
+						break;
+					}
 				}
 			}
 		}
 		
-		System.out.print("è“è‰²çƒçƒå·ä¸º:" + blue);
+		System.out.println("À¶É«ÇòÇòºÅÎª:" + blue);
+		System.out.print("ºìÉ«ÇòÇòºÅ·Ö±ğÎª:");
 		for(int i=0; i<6; ++i) {
-			System.out.print("çº¢è‰²çƒçƒå·åˆ†åˆ«ä¸º:" + red[i] + " ");
+			System.out.print(red[i] + " ");
 		}
 		System.out.println();
 	}
